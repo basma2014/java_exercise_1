@@ -13,6 +13,11 @@ public class Launcher {
             String nxt = scanner.nextLine();
             if (nxt.equals("quit")) {
                 shouldQuit = true;
+            } else if ("fibo".equals(nxt)) {
+                System.out.println("Entrer un nombre:");
+                int n = scanner.nextInt();
+                scanner.nextLine();
+                System.out.println(fibo(n));
             } else {
                 System.out.println("Unknown command");
             }
@@ -20,6 +25,8 @@ public class Launcher {
 
     }
 
-
+    private static int fibo(int n) {
+        return n == 0 || n == 1 ? n : fibo(n - 1) + fibo(n - 2);
+    }
 
 }
